@@ -41,6 +41,11 @@ android {
 
 dependencies {
 
+    // Traditional Android dependencies for Views
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.activity:activity-ktx:1.9.3")
+
+    // Compose dependencies (keeping for compatibility)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHẦN 3: IMPLICIT INTENT VÀ INTENT FILTER"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Button mở SecondActivity để nhập dữ liệu -->
+    <Button
+        android:id="@+id/btnOpenSecondActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mở SecondActivity (ActivityResultLauncher)"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button hiển thị kết quả -->
+    <Button
+        android:id="@+id/btnShowResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kết quả sẽ hiển thị ở đây"
+        android:layout_marginBottom="24dp"
+        android:enabled="false" />
+
+    <!-- Button chia sẻ text -->
+    <Button
+        android:id="@+id/btnShareText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chia sẻ Text (Implicit Intent)"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button mở website -->
+    <Button
+        android:id="@+id/btnOpenWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mở Website (ACTION_VIEW)"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button gọi điện -->
+    <Button
+        android:id="@+id/btnCallPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gọi Điện (Implicit Intent)"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ví dụ Intent Filter:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="• SecondActivity: Nhận chia sẻ text từ app khác\n• WebActivity: Mở URL HTTPS từ browser"
+        android:textSize="14sp" />
+
+</LinearLayout>

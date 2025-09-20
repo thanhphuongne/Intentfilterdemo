@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- MainActivity -->
-    <activity
-        android:name=".MainActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+    <!-- Quyền gọi điện - cần thiết cho Implicit Intent ACTION_CALL -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
-    <!-- SecondActivity với Intent Filter cho chia sẻ text -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.IntentFilterDemo">
+
+        <!--
+            MainActivity - Activity chính của ứng dụng
+            Intent Filter: Launcher Activity (điểm vào của app)
+            Bảo mật: exported="true" - có thể được mở từ bên ngoài
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    <!--
+        SecondActivity - Nhận dữ liệu và Intent Filter chia sẻ text
+        Intent Filter cho ACTION_SEND:
+        - Action: android.intent.action.SEND (chia sẻ dữ liệu)
+        - Category: android.intent.category.DEFAULT (có thể xử lý implicit intent)
+        - Data: mimeType="text/plain" (chỉ xử lý text)
+        Bảo mật: exported="true" - cho phép app khác mở Activity này
+    -->
     <activity
         android:name=".SecondActivity"
         android:exported="true">
@@ -22,7 +42,15 @@
         </intent-filter>
     </activity>
 
-    <!-- WebActivity với Intent Filter cho URL -->
+    <!--
+        WebActivity - Xử lý URL với Intent Filter
+        Intent Filter cho ACTION_VIEW:
+        - Action: android.intent.action.VIEW (hiển thị dữ liệu)
+        - Category: DEFAULT (xử lý implicit intent)
+        - Category: BROWSABLE (có thể mở từ browser/link)
+        - Data: scheme="https" (chỉ xử lý URL HTTPS)
+        Bảo mật: exported="true" - cho phép browser mở Activity này
+    -->
     <activity
         android:name=".WebActivity"
         android:exported="true">
@@ -33,5 +61,7 @@
             <data android:scheme="https" />
         </intent-filter>
     </activity>
+
+    </application>
 
 </manifest>
